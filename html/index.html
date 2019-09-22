@@ -1,0 +1,18 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>Hello World!!!</p>
+    <img id="image1" src="" alt="fractal 216">
+    <script>
+        console.log("before");
+        $.getJSON('http://98.228.129.132/api/img', {}, function(data, textStatus, jqXHR) {
+            console.log(data.images);
+            $("#image1").attr("src", data.images[0].href);
+        });
+        console.log("after");
+    </script>
+</body>
+</html>
